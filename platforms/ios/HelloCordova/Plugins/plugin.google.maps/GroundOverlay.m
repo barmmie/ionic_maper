@@ -57,10 +57,11 @@
     layer.bearing = [[json valueForKey:@"bearing"] floatValue];
   }
 
+  layer.tappable = YES;
 
   NSString *id = [NSString stringWithFormat:@"groundOverlay_%lu", (unsigned long)layer.hash];
   [self.mapCtrl.overlayManager setObject:layer forKey: id];
-
+  layer.title = id;
 
   NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
   [result setObject:id forKey:@"id"];
@@ -217,7 +218,7 @@
   NSString *key = [command.arguments objectAtIndex:1];
   GMSGroundOverlay *layer = [self.mapCtrl getGroundOverlayByKey:key];
   NSInteger zIndex = [[command.arguments objectAtIndex:2] integerValue];
-  [layer setZIndex:zIndex];
+  [layer setZIndex:(int)zIndex];
   
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

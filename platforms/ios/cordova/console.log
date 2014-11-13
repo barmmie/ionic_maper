@@ -1,0 +1,376 @@
+objc[22873]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 09:10:11.915 HelloCordova[22873:70b] Cannot find executable for CFBundle 0xab2dfa0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 09:10:11.927 HelloCordova[22873:70b] Cannot find executable for CFBundle 0xa94bab0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 09:10:12.017 HelloCordova[22873:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 09:10:12.018 HelloCordova[22873:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 09:10:12.056 HelloCordova[22873:70b] Unlimited access to network resources
+2014-11-12 09:10:12.181 HelloCordova[22873:70b] [CDVTimer][keyboard] 0.119030ms
+2014-11-12 09:10:12.182 HelloCordova[22873:70b] [CDVTimer][TotalPluginStartup] 0.766993ms
+2014-11-12 09:10:12.391 HelloCordova[22873:70b] Resetting plugins due to page load.
+2014-11-12 09:10:12.735 HelloCordova[22873:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/tab/dash
+2014-11-12 09:10:12.975 HelloCordova[22873:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 09:10:13.794 HelloCordova[22873:70b] ClientParametersRequest failed, 3 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xab6efa0 {data=<CFData 0xaa43700 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:10:13.918 HelloCordova[22873:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 09:10:13.919 HelloCordova[22873:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-12 09:10:13.991 HelloCordova[22873:70b] ClientParametersRequest failed, 2 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xab8e2e0 {data=<CFData 0xac2f930 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:10:18.152 HelloCordova[22873:70b] ClientParametersRequest failed, 1 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xab65d60 {data=<CFData 0xaa34db0 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:10:26.313 HelloCordova[22873:70b] ClientParametersRequest failed, 0 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xaa308d0 {data=<CFData 0xac3dff0 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:10:26.314 HelloCordova[22873:70b] Google Maps SDK for iOS cannot connect or validate APIKey: Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xaa308d0 {data=<CFData 0xac3dff0 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:10:26.314 HelloCordova[22873:70b] Your key may be invalid for your bundle ID: com.ionicframework.starter
+objc[23254]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 09:12:43.117 HelloCordova[23254:70b] Cannot find executable for CFBundle 0xab18bf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 09:12:43.125 HelloCordova[23254:70b] Cannot find executable for CFBundle 0xac40560 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 09:12:43.165 HelloCordova[23254:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 09:12:43.166 HelloCordova[23254:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 09:12:43.178 HelloCordova[23254:70b] Unlimited access to network resources
+2014-11-12 09:12:43.205 HelloCordova[23254:70b] [CDVTimer][keyboard] 0.110030ms
+2014-11-12 09:12:43.205 HelloCordova[23254:70b] [CDVTimer][TotalPluginStartup] 0.823021ms
+2014-11-12 09:12:43.352 HelloCordova[23254:70b] Resetting plugins due to page load.
+2014-11-12 09:12:43.672 HelloCordova[23254:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/tab/dash
+2014-11-12 09:12:43.916 HelloCordova[23254:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 09:12:44.027 HelloCordova[23254:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 09:12:44.028 HelloCordova[23254:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-12 09:12:44.600 HelloCordova[23254:70b] ClientParametersRequest failed, 3 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xab399e0 {data=<CFData 0xac7aac0 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:12:44.747 HelloCordova[23254:70b] ClientParametersRequest failed, 2 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xab429e0 {data=<CFData 0xac35f70 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:12:48.906 HelloCordova[23254:70b] ClientParametersRequest failed, 1 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xaa53710 {data=<CFData 0xaa34590 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:12:57.115 HelloCordova[23254:70b] ClientParametersRequest failed, 0 attempts remaining (0 vs 6). Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xaca0800 {data=<CFData 0xab79390 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:12:57.116 HelloCordova[23254:70b] Google Maps SDK for iOS cannot connect or validate APIKey: Error Domain=com.google.HTTPStatus Code=400 "The operation couldn’t be completed. (com.google.HTTPStatus error 400.)" UserInfo=0xaca0800 {data=<CFData 0xab79390 [0x767ec8]>{length = 145, capacity = 256, bytes = 0x3c48544d4c3e0a3c484541443e0a3c54 ... 3c2f48544d4c3e0a}}
+2014-11-12 09:12:57.116 HelloCordova[23254:70b] Your key may be invalid for your bundle ID: com.ionicframework.starter
+objc[25745]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 12:47:47.295 HelloCordova[25745:70b] Cannot find executable for CFBundle 0xaa62310 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 12:47:47.298 HelloCordova[25745:70b] Cannot find executable for CFBundle 0xab24810 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 12:47:47.329 HelloCordova[25745:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 12:47:47.329 HelloCordova[25745:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 12:47:47.336 HelloCordova[25745:70b] Unlimited access to network resources
+2014-11-12 12:47:47.361 HelloCordova[25745:70b] [CDVTimer][keyboard] 0.073016ms
+2014-11-12 12:47:47.361 HelloCordova[25745:70b] [CDVTimer][TotalPluginStartup] 0.692010ms
+2014-11-12 12:47:47.409 HelloCordova[25745:70b] Resetting plugins due to page load.
+2014-11-12 12:47:47.542 HelloCordova[25745:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/tab/dash
+2014-11-12 12:47:47.681 HelloCordova[25745:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 12:47:47.798 HelloCordova[25745:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 12:47:47.798 HelloCordova[25745:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+Terminating in response to SpringBoard's termination.
+objc[26703]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 13:41:12.785 HelloCordova[26703:70b] Cannot find executable for CFBundle 0xab2dc70 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 13:41:12.793 HelloCordova[26703:70b] Cannot find executable for CFBundle 0xac4a180 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 13:41:12.841 HelloCordova[26703:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 13:41:12.843 HelloCordova[26703:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 13:41:12.856 HelloCordova[26703:70b] Unlimited access to network resources
+2014-11-12 13:41:12.883 HelloCordova[26703:70b] [CDVTimer][keyboard] 0.106990ms
+2014-11-12 13:41:12.883 HelloCordova[26703:70b] [CDVTimer][TotalPluginStartup] 0.755012ms
+2014-11-12 13:41:13.052 HelloCordova[26703:70b] Resetting plugins due to page load.
+2014-11-12 13:41:13.341 HelloCordova[26703:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/app/dash
+2014-11-12 13:41:13.674 HelloCordova[26703:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 13:41:13.786 HelloCordova[26703:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 13:41:13.786 HelloCordova[26703:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+objc[27070]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 13:44:58.009 HelloCordova[27070:70b] Cannot find executable for CFBundle 0xa9395f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 13:44:58.016 HelloCordova[27070:70b] Cannot find executable for CFBundle 0xa947940 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 13:44:58.050 HelloCordova[27070:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 13:44:58.051 HelloCordova[27070:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 13:44:58.058 HelloCordova[27070:70b] Unlimited access to network resources
+2014-11-12 13:44:58.082 HelloCordova[27070:70b] [CDVTimer][keyboard] 0.068009ms
+2014-11-12 13:44:58.082 HelloCordova[27070:70b] [CDVTimer][TotalPluginStartup] 0.689030ms
+2014-11-12 13:44:58.130 HelloCordova[27070:70b] Resetting plugins due to page load.
+2014-11-12 13:44:58.277 HelloCordova[27070:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/app/dash
+2014-11-12 13:44:58.406 HelloCordova[27070:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 13:44:58.492 HelloCordova[27070:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 13:44:58.493 HelloCordova[27070:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+objc[27925]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 14:47:29.443 HelloCordova[27925:70b] Cannot find executable for CFBundle 0xac67fe0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 14:47:29.451 HelloCordova[27925:70b] Cannot find executable for CFBundle 0xac83100 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 14:47:29.498 HelloCordova[27925:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 14:47:29.500 HelloCordova[27925:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 14:47:29.511 HelloCordova[27925:70b] Unlimited access to network resources
+2014-11-12 14:47:29.541 HelloCordova[27925:70b] [CDVTimer][keyboard] 0.124991ms
+2014-11-12 14:47:29.542 HelloCordova[27925:70b] [CDVTimer][TotalPluginStartup] 0.899017ms
+2014-11-12 14:47:29.610 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:47:29.833 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:47:29.979 HelloCordova[27925:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-12 14:47:30.074 HelloCordova[27925:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-12 14:47:30.075 HelloCordova[27925:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-12 14:48:01.387 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:48:01.516 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:50:53.193 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:50:53.345 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:51:15.527 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:51:15.647 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:51:28.802 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:51:28.923 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:58:42.082 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:58:42.195 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 14:58:55.168 HelloCordova[27925:70b] Resetting plugins due to page load.
+2014-11-12 14:58:55.289 HelloCordova[27925:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+objc[28421]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 15:15:23.132 HelloCordova[28421:70b] Cannot find executable for CFBundle 0xac47560 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 15:15:23.137 HelloCordova[28421:70b] Cannot find executable for CFBundle 0xab51430 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 15:15:23.174 HelloCordova[28421:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 15:15:23.175 HelloCordova[28421:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 15:15:23.182 HelloCordova[28421:70b] Unlimited access to network resources
+2014-11-12 15:15:23.202 HelloCordova[28421:70b] [CDVTimer][keyboard] 0.079989ms
+2014-11-12 15:15:23.203 HelloCordova[28421:70b] [CDVTimer][TotalPluginStartup] 0.824034ms
+2014-11-12 15:15:23.248 HelloCordova[28421:70b] Resetting plugins due to page load.
+2014-11-12 15:15:23.376 HelloCordova[28421:70b] Finished load of: file:///Users/guestdev/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/21CAD0AD-E5F0-42DD-9BFD-BF6E789DFA4C/HelloCordova.app/www/index.html#/app/dash
+2014-11-12 15:15:23.461 HelloCordova[28421:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+objc[28635]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-12 15:18:05.320 HelloCordova[28635:70b] Cannot find executable for CFBundle 0xaa408f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-12 15:18:05.325 HelloCordova[28635:70b] Cannot find executable for CFBundle 0xaa4bfc0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-12 15:18:05.363 HelloCordova[28635:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-12 15:18:05.364 HelloCordova[28635:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-12 15:18:05.372 HelloCordova[28635:70b] Unlimited access to network resources
+2014-11-12 15:18:05.393 HelloCordova[28635:70b] [CDVTimer][keyboard] 0.077009ms
+2014-11-12 15:18:05.394 HelloCordova[28635:70b] [CDVTimer][TotalPluginStartup] 0.615001ms
+2014-11-12 15:18:05.449 HelloCordova[28635:70b] Resetting plugins due to page load.
+2014-11-12 15:18:05.694 HelloCordova[28635:70b] Finished load of: http://192.168.10.2:8100/#/app/dash
+2014-11-12 15:18:05.754 HelloCordova[28635:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+objc[37647]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 10:27:02.042 HelloCordova[37647:70b] Cannot find executable for CFBundle 0xab08710 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 10:27:02.051 HelloCordova[37647:70b] Cannot find executable for CFBundle 0xaa298d0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 10:27:02.092 HelloCordova[37647:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 10:27:02.093 HelloCordova[37647:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 10:27:02.105 HelloCordova[37647:70b] Unlimited access to network resources
+2014-11-13 10:27:02.130 HelloCordova[37647:70b] [CDVTimer][keyboard] 0.120997ms
+2014-11-13 10:27:02.131 HelloCordova[37647:70b] [CDVTimer][TotalPluginStartup] 0.792980ms
+2014-11-13 10:27:02.283 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:27:02.860 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:27:02.950 HelloCordova[37647:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 10:27:03.705 HelloCordova[37647:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 10:27:03.705 HelloCordova[37647:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-13 10:27:39.426 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:27:39.427 HelloCordova[37647:70b] ---status=0
+2014-11-13 10:27:39.427 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:28:00.470 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:28:00.472 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:28:00.472 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:30:16.617 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:30:16.799 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:30:52.248 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:30:52.469 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:30:58.563 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:30:58.711 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:31:01.383 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:31:01.463 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:31:41.787 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:31:41.920 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:32:36.257 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:32:36.393 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:32:42.588 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:32:42.590 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:32:42.590 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:34:19.852 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:34:20.089 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:34:22.166 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:34:22.346 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:34:26.755 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:34:26.757 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:34:26.757 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:34:50.361 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:34:50.491 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:34:55.786 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:34:55.941 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:34:59.364 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:34:59.365 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:34:59.365 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:35:31.532 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:35:31.534 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:35:31.534 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:35:40.999 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:35:41.000 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:35:41.000 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:36:06.356 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:36:06.499 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:39:54.303 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:39:54.461 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:40:48.250 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:40:48.406 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:42:07.166 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:42:07.315 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:42:10.461 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:42:10.462 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:42:10.463 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:42:21.886 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:42:22.065 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:42:28.730 HelloCordova[37647:70b] Resetting plugins due to page load.
+2014-11-13 10:42:28.830 HelloCordova[37647:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:42:34.165 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:42:34.166 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:42:34.167 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:43:20.895 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:43:20.896 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:43:20.897 HelloCordova[37647:70b] ---status=authorized
+2014-11-13 10:43:41.725 HelloCordova[37647:70b] ---getMyLocaiton
+2014-11-13 10:43:41.727 HelloCordova[37647:70b] ---status=3
+2014-11-13 10:43:41.727 HelloCordova[37647:70b] ---status=authorized
+objc[38018]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 10:43:51.961 HelloCordova[38018:70b] Cannot find executable for CFBundle 0xab23270 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 10:43:51.968 HelloCordova[38018:70b] Cannot find executable for CFBundle 0xac0a0e0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 10:43:52.012 HelloCordova[38018:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 10:43:52.013 HelloCordova[38018:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 10:43:52.021 HelloCordova[38018:70b] Unlimited access to network resources
+2014-11-13 10:43:52.046 HelloCordova[38018:70b] [CDVTimer][keyboard] 0.088990ms
+2014-11-13 10:43:52.046 HelloCordova[38018:70b] [CDVTimer][TotalPluginStartup] 0.642002ms
+2014-11-13 10:43:52.117 HelloCordova[38018:70b] Resetting plugins due to page load.
+2014-11-13 10:43:52.410 HelloCordova[38018:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 10:43:52.436 HelloCordova[38018:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:43:52.517 HelloCordova[38018:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 10:43:52.518 HelloCordova[38018:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+objc[38441]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 10:46:15.597 HelloCordova[38441:70b] Cannot find executable for CFBundle 0xac43ed0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 10:46:15.605 HelloCordova[38441:70b] Cannot find executable for CFBundle 0xab31510 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 10:46:15.658 HelloCordova[38441:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 10:46:15.659 HelloCordova[38441:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 10:46:15.670 HelloCordova[38441:70b] Unlimited access to network resources
+2014-11-13 10:46:15.698 HelloCordova[38441:70b] [CDVTimer][keyboard] 0.114024ms
+2014-11-13 10:46:15.698 HelloCordova[38441:70b] [CDVTimer][TotalPluginStartup] 0.804007ms
+2014-11-13 10:46:15.833 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:46:16.351 HelloCordova[38441:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 10:46:16.384 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:46:16.480 HelloCordova[38441:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 10:46:16.481 HelloCordova[38441:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-13 10:46:18.463 HelloCordova[38441:5e17] Can't endBackgroundTask: no background task exists with identifier 7, or it may have already been ended. Break in UIApplicationEndBackgroundTaskError() to debug.
+2014-11-13 10:46:21.732 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:46:21.734 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:46:21.734 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:46:42.343 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:46:42.506 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:46:49.682 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:46:49.870 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:47:03.478 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:47:03.638 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/friends
+2014-11-13 10:47:05.669 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:47:05.669 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:47:05.670 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:47:19.194 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:47:19.440 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:51:56.795 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:51:56.804 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:51:56.805 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:51:56.806 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '10.882080' ms. Plugin should use a background thread.
+2014-11-13 10:55:12.596 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:55:12.606 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:55:12.606 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:55:12.607 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '11.256104' ms. Plugin should use a background thread.
+2014-11-13 10:55:17.646 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:55:17.647 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:55:17.648 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:55:45.436 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:55:46.186 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:55:48.749 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:55:49.580 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:55:52.999 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:55:53.009 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:55:53.009 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:55:53.011 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '11.899170' ms. Plugin should use a background thread.
+2014-11-13 10:55:55.411 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:55:55.413 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:55:55.413 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:55:57.597 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '27.385986' ms. Plugin should use a background thread.
+2014-11-13 10:55:57.637 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '36.432861' ms. Plugin should use a background thread.
+2014-11-13 10:55:57.743 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:55:57.744 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:55:57.744 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:55:58.453 HelloCordova[38441:30707] Can't endBackgroundTask: no background task exists with identifier 50, or it may have already been ended. Break in UIApplicationEndBackgroundTaskError() to debug.
+2014-11-13 10:57:08.217 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:57:08.948 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:57:14.353 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:57:14.362 HelloCordova[38441:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-11-13 10:57:14.363 HelloCordova[38441:70b] Resetting plugins due to page load.
+2014-11-13 10:57:15.017 HelloCordova[38441:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 10:57:23.016 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:57:23.026 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:57:23.026 HelloCordova[38441:70b] ---status=authorized
+2014-11-13 10:57:23.027 HelloCordova[38441:70b] THREAD WARNING: ['GoogleMaps'] took '10.950928' ms. Plugin should use a background thread.
+2014-11-13 10:57:25.512 HelloCordova[38441:70b] ---getMyLocaiton
+2014-11-13 10:57:25.513 HelloCordova[38441:70b] ---status=3
+2014-11-13 10:57:25.514 HelloCordova[38441:70b] ---status=authorized
+objc[38974]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 12:50:49.647 HelloCordova[38974:70b] Cannot find executable for CFBundle 0xac3a7d0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 12:50:49.656 HelloCordova[38974:70b] Cannot find executable for CFBundle 0xaa31f00 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 12:50:49.694 HelloCordova[38974:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 12:50:49.695 HelloCordova[38974:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 12:50:49.705 HelloCordova[38974:70b] Unlimited access to network resources
+2014-11-13 12:50:49.732 HelloCordova[38974:70b] [CDVTimer][keyboard] 0.119984ms
+2014-11-13 12:50:49.732 HelloCordova[38974:70b] [CDVTimer][TotalPluginStartup] 0.802994ms
+2014-11-13 12:50:49.902 HelloCordova[38974:70b] Resetting plugins due to page load.
+2014-11-13 12:50:50.363 HelloCordova[38974:70b] Finished load of: http://192.168.10.2:8100/#/tab/account
+2014-11-13 12:50:50.490 HelloCordova[38974:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 12:50:52.391 HelloCordova[38974:70b] ---getMyLocaiton
+2014-11-13 12:50:52.393 HelloCordova[38974:70b] ---status=3
+2014-11-13 12:50:52.393 HelloCordova[38974:70b] ---status=authorized
+2014-11-13 12:50:52.503 HelloCordova[38974:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 12:50:52.503 HelloCordova[38974:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-13 13:02:20.693 HelloCordova[38974:70b] Resetting plugins due to page load.
+2014-11-13 13:02:20.848 HelloCordova[38974:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+objc[39362]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 13:02:53.948 HelloCordova[39362:70b] Cannot find executable for CFBundle 0xac2f4f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 13:02:53.957 HelloCordova[39362:70b] Cannot find executable for CFBundle 0xaa40930 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 13:02:53.997 HelloCordova[39362:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 13:02:53.998 HelloCordova[39362:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 13:02:54.011 HelloCordova[39362:70b] Unlimited access to network resources
+2014-11-13 13:02:54.038 HelloCordova[39362:70b] [CDVTimer][keyboard] 0.115037ms
+2014-11-13 13:02:54.039 HelloCordova[39362:70b] [CDVTimer][TotalPluginStartup] 0.770986ms
+2014-11-13 13:02:54.185 HelloCordova[39362:70b] Resetting plugins due to page load.
+2014-11-13 13:02:54.690 HelloCordova[39362:70b] Finished load of: http://192.168.10.2:8100/#/tab/account
+2014-11-13 13:02:54.845 HelloCordova[39362:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 13:02:59.954 HelloCordova[39362:70b] ---getMyLocaiton
+2014-11-13 13:02:59.955 HelloCordova[39362:70b] ---status=3
+2014-11-13 13:02:59.956 HelloCordova[39362:70b] ---status=authorized
+2014-11-13 13:03:00.122 HelloCordova[39362:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 13:03:00.123 HelloCordova[39362:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-13 13:03:41.323 HelloCordova[39362:70b] Resetting plugins due to page load.
+2014-11-13 13:03:41.488 HelloCordova[39362:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 13:03:52.611 HelloCordova[39362:70b] Resetting plugins due to page load.
+2014-11-13 13:03:52.797 HelloCordova[39362:70b] Finished load of: http://192.168.10.2:8100/#/tab/dash
+2014-11-13 13:04:07.032 HelloCordova[39362:70b] ---getMyLocaiton
+2014-11-13 13:04:07.041 HelloCordova[39362:70b] ---status=3
+2014-11-13 13:04:07.042 HelloCordova[39362:70b] ---status=authorized
+2014-11-13 13:04:07.042 HelloCordova[39362:70b] THREAD WARNING: ['GoogleMaps'] took '10.398926' ms. Plugin should use a background thread.
+objc[39561]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 13:04:29.012 HelloCordova[39561:70b] Cannot find executable for CFBundle 0xaa42660 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 13:04:29.017 HelloCordova[39561:70b] Cannot find executable for CFBundle 0xaa5b8f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 13:04:29.060 HelloCordova[39561:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 13:04:29.062 HelloCordova[39561:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 13:04:29.068 HelloCordova[39561:70b] Unlimited access to network resources
+2014-11-13 13:04:29.093 HelloCordova[39561:70b] [CDVTimer][keyboard] 0.087976ms
+2014-11-13 13:04:29.094 HelloCordova[39561:70b] [CDVTimer][TotalPluginStartup] 0.615954ms
+2014-11-13 13:04:29.157 HelloCordova[39561:70b] Resetting plugins due to page load.
+2014-11-13 13:04:29.398 HelloCordova[39561:70b] Finished load of: http://192.168.10.2:8100/#/tab/account
+2014-11-13 13:04:29.469 HelloCordova[39561:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+objc[39752]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 13:05:38.264 HelloCordova[39752:70b] Cannot find executable for CFBundle 0xab422b0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 13:05:38.268 HelloCordova[39752:70b] Cannot find executable for CFBundle 0xa90e230 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 13:05:38.297 HelloCordova[39752:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 13:05:38.297 HelloCordova[39752:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 13:05:38.304 HelloCordova[39752:70b] Unlimited access to network resources
+2014-11-13 13:05:38.326 HelloCordova[39752:70b] [CDVTimer][keyboard] 0.083983ms
+2014-11-13 13:05:38.326 HelloCordova[39752:70b] [CDVTimer][TotalPluginStartup] 0.586987ms
+2014-11-13 13:05:38.376 HelloCordova[39752:70b] Resetting plugins due to page load.
+2014-11-13 13:05:38.621 HelloCordova[39752:70b] Finished load of: http://192.168.10.2:8100/#/tab/account
+2014-11-13 13:05:38.658 HelloCordova[39752:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+objc[40032]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-11-13 13:10:21.280 HelloCordova[40032:70b] Cannot find executable for CFBundle 0xa92aea0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-11-13 13:10:21.298 HelloCordova[40032:70b] Cannot find executable for CFBundle 0xa92d690 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-11-13 13:10:21.346 HelloCordova[40032:70b] Apache Cordova native platform version 3.6.3 is starting.
+2014-11-13 13:10:21.347 HelloCordova[40032:70b] Multi-tasking -> Device: YES, App: YES
+2014-11-13 13:10:21.358 HelloCordova[40032:70b] Unlimited access to network resources
+2014-11-13 13:10:21.384 HelloCordova[40032:70b] [CDVTimer][keyboard] 0.119030ms
+2014-11-13 13:10:21.385 HelloCordova[40032:70b] [CDVTimer][TotalPluginStartup] 0.779986ms
+2014-11-13 13:10:21.519 HelloCordova[40032:70b] Resetting plugins due to page load.
+2014-11-13 13:10:21.995 HelloCordova[40032:70b] Finished load of: http://192.168.10.2:8100/#/tab/account
+2014-11-13 13:10:22.168 HelloCordova[40032:70b] This app uses phonegap-googlemaps-plugin version 1.2.4
+2014-11-13 13:10:23.506 HelloCordova[40032:70b] ---getMyLocaiton
+2014-11-13 13:10:23.507 HelloCordova[40032:70b] ---status=3
+2014-11-13 13:10:23.508 HelloCordova[40032:70b] ---status=authorized
+2014-11-13 13:10:23.597 HelloCordova[40032:70b] Google Maps SDK for iOS version: 1.8.1.9233
+2014-11-13 13:10:23.597 HelloCordova[40032:70b] New version of Google Maps SDK for iOS available: 1.9.12656.0
+2014-11-13 13:10:32.363 HelloCordova[40032:70b] Button was clicked
+2014-11-13 13:10:36.259 HelloCordova[40032:70b] ---getMyLocaiton
+2014-11-13 13:10:36.260 HelloCordova[40032:70b] ---status=3
+2014-11-13 13:10:36.260 HelloCordova[40032:70b] ---status=authorized
+2014-11-13 13:10:42.897 HelloCordova[40032:70b] Button was clicked
+2014-11-13 13:10:47.647 HelloCordova[40032:70b] ---getMyLocaiton
+2014-11-13 13:10:47.648 HelloCordova[40032:70b] ---status=3
+2014-11-13 13:10:47.649 HelloCordova[40032:70b] ---status=authorized
+2014-11-13 13:11:00.925 HelloCordova[40032:70b] ---getMyLocaiton
+2014-11-13 13:11:00.926 HelloCordova[40032:70b] ---status=3
+2014-11-13 13:11:00.926 HelloCordova[40032:70b] ---status=authorized

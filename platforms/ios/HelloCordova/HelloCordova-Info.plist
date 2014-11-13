@@ -80,6 +80,23 @@
     <key>CFBundleShortVersionString</key>
     <string>0.0.1</string>
     <key>Google Maps API Key</key>
-    <string>AIzaSyA6tsFPlaBcM_mHPK2k9rxCugXruF8Ly3Y</string>
+    <string>AIzaSyDFSNYo3GTXvUkum-yBtft49eKm5_JHSrw</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show your location on the map</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.ionicframework.starter</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.ionicframework.starter</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

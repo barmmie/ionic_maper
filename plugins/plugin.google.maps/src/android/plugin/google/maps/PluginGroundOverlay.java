@@ -100,7 +100,7 @@ public class PluginGroundOverlay extends MyPlugin {
   
   private void _success(GroundOverlay groundOverlay, CallbackContext callbackContext) {
 
-    String id = "ground_" + groundOverlay.getId();
+    String id = "groundOverlay_" + groundOverlay.getId();
     this.objects.put(id, groundOverlay);
 
     JSONObject result = new JSONObject();
@@ -121,11 +121,11 @@ public class PluginGroundOverlay extends MyPlugin {
     String id = args.getString(1);
     GroundOverlay groundOverlay = (GroundOverlay)this.objects.get(id);
     if (groundOverlay == null) {
-      callbackContext.success();
+      this.sendNoResult(callbackContext);
       return;
     }
     groundOverlay.remove();
-    callbackContext.success();
+    this.sendNoResult(callbackContext);
   }
 
   /**
@@ -140,11 +140,11 @@ public class PluginGroundOverlay extends MyPlugin {
     String id = args.getString(1);
     GroundOverlay groundOverlay = (GroundOverlay)this.objects.get(id);
     if (groundOverlay == null) {
-      callbackContext.success();
+      this.sendNoResult(callbackContext);
       return;
     }
     groundOverlay.setVisible(visible);
-    callbackContext.success();
+    this.sendNoResult(callbackContext);
   }
   
 
@@ -179,8 +179,8 @@ public class PluginGroundOverlay extends MyPlugin {
     JSONArray points = args.getJSONArray(2);
     LatLngBounds bounds = PluginUtil.JSONArray2LatLngBounds(points);
     groundOverlay.setPositionFromBounds(bounds);
-    
-    callbackContext.success();
+
+    this.sendNoResult(callbackContext);
   }
 
   /**

@@ -11,14 +11,23 @@
 #import "GoogleMapsViewController.h"
 #import "Map.h"
 #import "PluginUtil.h"
+#import "R9HTTPRequest.h"
+#import "MyPluginLayer.h"
+#import "MyReachability.h"
+#import "MyPluginScrollView.h"
 
-@interface GoogleMaps : CDVPlugin
+@interface GoogleMaps : CDVPlugin<CLLocationManagerDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) GoogleMapsViewController* mapCtrl;
 @property (nonatomic) UIView *licenseLayer;
 @property (nonatomic) UIView *footer;
 @property (nonatomic) UIButton *closeButton;
 @property (nonatomic) UIButton *licenseButton;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSMutableArray *locationCommandQueue;
+@property (nonatomic) MyPluginScrollView *pluginScrollView;
+@property (nonatomic) UIView *root;
+@property (nonatomic) MyPluginLayer *pluginLayer;
 
 - (void)exec:(CDVInvokedUrlCommand*)command;
 - (void)showDialog:(CDVInvokedUrlCommand*)command;
@@ -29,4 +38,8 @@
 - (void)resizeMap:(CDVInvokedUrlCommand *)command;
 - (void)setDiv:(CDVInvokedUrlCommand *)command;
 - (void)isAvailable:(CDVInvokedUrlCommand *)command;
+- (void)clear:(CDVInvokedUrlCommand*)command;
+- (void)pluginLayer_pushHtmlElement:(CDVInvokedUrlCommand*)command;
+- (void)pluginLayer_removeHtmlElement:(CDVInvokedUrlCommand*)command;
+- (void)remove:(CDVInvokedUrlCommand*)command;
 @end

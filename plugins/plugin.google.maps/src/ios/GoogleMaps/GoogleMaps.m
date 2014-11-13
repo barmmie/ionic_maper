@@ -14,6 +14,107 @@
 {
   self.licenseLayer = nil;
   self.mapCtrl.isFullScreen = YES;
+  self.locationCommandQueue = [[NSMutableArray alloc] init];
+  
+  [self versionCheck];
+  
+  
+  self.pluginLayer = [[MyPluginLayer alloc] initWithFrame:self.webView.frame];
+  self.pluginLayer.backgroundColor = [UIColor whiteColor];
+  self.pluginLayer.webView = self.webView;
+  self.pluginLayer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  
+  self.pluginScrollView = [[MyPluginScrollView alloc] initWithFrame:self.webView.frame];
+  self.pluginScrollView.debugView.webView = self.webView;
+  self.pluginScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+  self.webView.scrollView.delegate = self;
+  [self.pluginScrollView setContentSize:CGSizeMake(320, 960) ];
+  
+  self.root = self.webView.superview;
+  [self.webView removeFromSuperview];
+  self.pluginLayer.webView = self.webView;
+  [self.pluginLayer addSubview:self.pluginScrollView];
+  [self.pluginLayer addSubview:self.webView];
+  [self.root addSubview:self.pluginLayer];
+  
+  NSString *APIKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"Google Maps API Key"];
+  if (APIKey == nil) {
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *bundleName = [NSString stringWithFormat:@"%@", [info objectForKey:@"CFBundleDisplayName"]];
+    NSString *message = [NSString stringWithFormat:@"Please replace 'API_KEY_FOR_IOS' in the platforms/ios/%@/%@-Info.plist with your API Key!", bundleName, bundleName];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"API key is not setted."
+                                              message:message
+                                              delegate:self
+                                              cancelButtonTitle:@"CLOSE"
+                                              otherButtonTitles:nil];
+    [alert show];
+  } else {
+    [GMSServices provideAPIKey:APIKey];
+  }
+}
+/**
+ * @Private
+ * Execute the method of other plugin class internally.
+ */
+-(void)versionCheck
+{
+  NSString *PLUGIN_VERSION = @"1.2.4";
+  NSLog(@"This app uses phonegap-googlemaps-plugin version %@", PLUGIN_VERSION);
+  
+  if ([PluginUtil isInDebugMode] == NO || [PluginUtil isIOS7_OR_OVER] == NO) {
+    return;
+  }
+  
+  BOOL isNetworkAvailable = NO;
+  MyReachability *reachablity = [MyReachability reachabilityForInternetConnection];
+  NetworkStatus status = [reachablity currentReachabilityStatus];
+  switch (status) {
+  case ReachableViaWiFi:
+  case ReachableViaWWAN:
+    isNetworkAvailable = YES;
+    break;
+  case NotReachable:
+    NSLog(@"[info] Can not connect to the internet");
+    break;
+  default:
+    break;
+  }
+  if (isNetworkAvailable == NO) {
+    return;
+  }
+  
+  NSURL *URL = [NSURL URLWithString:@"http://plugins.cordova.io/api/plugin.google.maps"];
+  R9HTTPRequest *request = [[R9HTTPRequest alloc] initWithURL:URL];
+  
+  [request setHTTPMethod:@"GET"];
+  [request setTimeoutInterval:5];
+  [request setFailedHandler:^(NSError *error){}];
+  [request setCompletionHandler:^(NSHTTPURLResponse *responseHeader, NSString *responseString){
+    NSData *jsonData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSMutableDictionary *info = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    NSDictionary *distTags = [info objectForKey:@"dist-tags"];
+    NSString *latestVersion = [distTags objectForKey:@"latest"];
+    if ([PLUGIN_VERSION isEqualToString:latestVersion] == NO) {
+      NSLog(@"phonegap-googlemaps-plugin version %@ is available.", latestVersion);
+    }
+  }];
+  [request startRequest];
+}
+
+-(void)viewDidLayoutSubviews {
+    [self.pluginScrollView setContentSize: self.webView.scrollView.contentSize];
+    [self.pluginScrollView flashScrollIndicators];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  CGPoint offset = self.pluginScrollView.contentOffset;
+  offset.x = self.webView.scrollView.contentOffset.x;
+  offset.y = self.webView.scrollView.contentOffset.y;
+  [self.pluginScrollView setContentOffset:offset];
+  [self.pluginLayer setNeedsDisplay];
+  [self.pluginScrollView.debugView setNeedsDisplay];
 }
 
 /**
@@ -21,7 +122,7 @@
  */
 - (void)getMap:(CDVInvokedUrlCommand *)command {
   NSString *APIKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"Google Maps API Key"];
-  if ([APIKey isEqualToString:@"API_KEY_FOR_IOS"]) {
+  if (APIKey == nil) {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *bundleName = [NSString stringWithFormat:@"%@", [info objectForKey:@"CFBundleDisplayName"]];
     NSString *message = [NSString stringWithFormat:@"Please replace 'API_KEY_FOR_IOS' in the platforms/ios/%@/%@-Info.plist with your API Key!", bundleName, bundleName];
@@ -35,7 +136,11 @@
     return;
   }
   
-  if (!self.mapCtrl) {
+  if (self.mapCtrl) {
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    return;
+  } else {
     dispatch_queue_t gueue = dispatch_queue_create("plugins.google.maps.init", NULL);
     
     // Create a map view
@@ -43,7 +148,13 @@
       NSDictionary *options = [command.arguments objectAtIndex:0];
       self.mapCtrl = [[GoogleMapsViewController alloc] initWithOptions:options];
       self.mapCtrl.webView = self.webView;
+      
+      if ([options objectForKey:@"backgroundColor"]) {
+        NSArray *rgbColor = [options objectForKey:@"backgroundColor"];
+        self.pluginLayer.backgroundColor = [rgbColor parsePluginColor];
+      }
     });
+    
     
     // Create an instance of Map Class
     dispatch_async(gueue, ^{
@@ -54,57 +165,22 @@
       
       
       dispatch_sync(dispatch_get_main_queue(), ^{
-      
-        if ([command.arguments count] == 2) {
+        if ([command.arguments count] == 3) {
+          [self.mapCtrl.view removeFromSuperview];
           self.mapCtrl.isFullScreen = NO;
-          self.mapCtrl.embedRect =  [command.arguments objectAtIndex:1];
-          self.mapCtrl.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-          [self.webView.scrollView addSubview:self.mapCtrl.view];
-          [self.mapCtrl updateMapViewLayout:NO];
-          [self.mapCtrl.view setFrameWithDictionary:self.mapCtrl.embedRect];
+          self.pluginLayer.mapCtrl = self.mapCtrl;
+          self.pluginLayer.webView = self.webView;
+          
+          
+         [self.pluginScrollView attachView:self.mapCtrl.view];
+          //[self.pluginScrollView addSubview:self.mapCtrl.view];
+          [self resizeMap:command];
         }
-        
-
-      });
-    });
-    
-    // Create the dialog footer
-    dispatch_async(gueue, ^{
-      dispatch_sync(dispatch_get_main_queue(), ^{
-        
-        // Create the footer background
-        self.footer = [[UIView alloc]init];
-        self.footer.backgroundColor = [UIColor lightGrayColor];
-        
-        self.footer.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-                                  UIViewAutoresizingFlexibleWidth;
-        
-        // Create the close button
-        self.closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        CGRect frame = [self.closeButton frame];
-        frame.origin.x = 10;
-        frame.origin.y = 0;
-        frame.size.width = 50;
-        frame.size.height = 40;
-        [self.closeButton setFrame:frame];
-        self.closeButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-                                              UIViewAutoresizingFlexibleHeight;
-        [self.closeButton setTitle:@"Close" forState:UIControlStateNormal];
-        [self.closeButton addTarget:self action:@selector(onCloseBtn_clicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.footer addSubview:self.closeButton];
-      
-        // Create the legal notices button
-        self.licenseButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.licenseButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-                                              UIViewAutoresizingFlexibleLeftMargin |
-                                              UIViewAutoresizingFlexibleHeight;
-        [self.licenseButton setTitle:@"Legal Notices" forState:UIControlStateNormal];
-        [self.licenseButton addTarget:self action:@selector(onLicenseBtn_clicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.footer addSubview:self.licenseButton];
         
     
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
       });
     });
   }
@@ -116,9 +192,9 @@
   Boolean isVisible = [[command.arguments objectAtIndex:0] boolValue];
   if (self.mapCtrl.isFullScreen == NO) {
     if (isVisible == YES) {
-      self.mapCtrl.view.hidden = NO;
+      self.mapCtrl.map.hidden = NO;
     } else {
-      self.mapCtrl.view.hidden = YES;
+      self.mapCtrl.map.hidden = YES;
     }
   }
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
@@ -137,6 +213,14 @@
     NSString *className = [target objectAtIndex:0];
     CDVPlugin<MyPlgunProtocol> *pluginClass = nil;
     NSString *methodName;
+    
+    if ([classAndMethod isEqualToString:@"Map.setOptions"]) {
+      NSDictionary *options = [command.arguments objectAtIndex:1];
+      if ([options objectForKey:@"backgroundColor"]) {
+        NSArray *rgbColor = [options objectForKey:@"backgroundColor"];
+        self.pluginLayer.backgroundColor = [rgbColor parsePluginColor];
+      }
+    }
     
     if ([target count] == 2) {
       methodName = [NSString stringWithFormat:@"%@:", [target objectAtIndex:1]];
@@ -195,7 +279,10 @@
 - (void)_removeMapView{
   if (self.mapCtrl.isFullScreen == YES) {
     [self.mapCtrl.view removeFromSuperview];
+    [self.pluginScrollView dettachView];
     [self.footer removeFromSuperview];
+    //[self.pluginLayer clearHTMLElement];
+    //[self.pluginScrollView.debugView clearHTMLElement];
     self.mapCtrl.isFullScreen = NO;
     self.mapCtrl.view.autoresizingMask = UIViewAutoresizingNone;
   }
@@ -203,8 +290,9 @@
   float width = [[self.mapCtrl.embedRect objectForKey:@"width"] floatValue];
   float height = [[self.mapCtrl.embedRect objectForKey:@"height"] floatValue];
   if (width > 0.0f && height > 0.0f) {
-    [self.webView.scrollView addSubview:self.mapCtrl.view];
-    [self.mapCtrl updateMapViewLayout:NO];
+    //[self.webView.scrollView addSubview:self.mapCtrl.view];
+    [self.pluginScrollView attachView:self.mapCtrl.view];
+    [self.mapCtrl updateMapViewLayout];
     return;
   }
 /*
@@ -230,7 +318,7 @@
     dialogRect.origin.y = dialogRect.size.height / 10;
     dialogRect.size.width -= dialogRect.origin.x * 2;
     dialogRect.size.height -= dialogRect.origin.y * 2;
-    if ([PluginUtil isIOS7] == false) {
+    if ([PluginUtil isIOS7_OR_OVER] == false) {
       dialogRect.size.height -= 20;
     }
     
@@ -291,29 +379,44 @@
 }
 
 - (void)setDiv:(CDVInvokedUrlCommand *)command {
-
-  if ([command.arguments count] == 1) {
+  if ([command.arguments count] == 2) {
+    //[self.mapCtrl.view removeFromSuperview];
+    [self.pluginScrollView dettachView];
+    [self.pluginLayer clearHTMLElement];
+    [self.pluginScrollView.debugView clearHTMLElement];
     self.mapCtrl.isFullScreen = NO;
-    [self.webView.scrollView addSubview:self.mapCtrl.view];
+    self.pluginLayer.mapCtrl = self.mapCtrl;
+    self.pluginLayer.webView = self.webView;
+    
+   [self.pluginScrollView attachView:self.mapCtrl.view];
     [self resizeMap:command];
   } else {
-    float width = [[self.mapCtrl.embedRect objectForKey:@"width"] floatValue];
-    float height = [[self.mapCtrl.embedRect objectForKey:@"height"] floatValue];
-  
-    if (width > 0.0f || height > 0.0f) {
-      [self.mapCtrl.view removeFromSuperview];
-    }
+    //[self.mapCtrl.view removeFromSuperview];
+    [self.pluginScrollView dettachView];
   }
 }
 
 
 - (void)resizeMap:(CDVInvokedUrlCommand *)command {
-  self.mapCtrl.embedRect = [command.arguments objectAtIndex:0];
-  BOOL animated = NO;
-  //if ([command.arguments count] == 2) {
-  //  animated = [[command.arguments objectAtIndex: 1] boolValue];
-  //}
-  [self.mapCtrl updateMapViewLayout:animated];
+  NSInteger argCnt = [command.arguments count];
+  self.mapCtrl.embedRect = [command.arguments objectAtIndex:(argCnt - 2)];
+  self.pluginLayer.embedRect = self.mapCtrl.embedRect;
+  self.pluginScrollView.debugView.embedRect = self.mapCtrl.embedRect;
+  [self.pluginLayer clearHTMLElement];
+  [self.pluginScrollView.debugView clearHTMLElement];
+
+  NSArray *HTMLs = [command.arguments objectAtIndex:(argCnt - 1)];
+  NSString *elemId;
+  NSDictionary *elemSize, *elemInfo;
+  for (int i = 0; i < [HTMLs count]; i++) {
+    elemInfo = [HTMLs objectAtIndex:i];
+    elemSize = [elemInfo objectForKey:@"size"];
+    elemId = [elemInfo objectForKey:@"id"];
+    [self.pluginLayer putHTMLElement:elemId size:elemSize];
+    [self.pluginScrollView.debugView putHTMLElement:elemId size:elemSize];
+  }
+  
+  [self.mapCtrl updateMapViewLayout];
 }
 
 
@@ -323,6 +426,38 @@
 - (void)showDialog:(CDVInvokedUrlCommand *)command {
   if (self.mapCtrl.isFullScreen == YES) {
     return;
+  }
+  
+  if (self.footer == nil) {
+    // Create the footer background
+    self.footer = [[UIView alloc]init];
+    self.footer.backgroundColor = [UIColor lightGrayColor];
+    
+    self.footer.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
+                              UIViewAutoresizingFlexibleWidth;
+  
+    // Create the close button
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    CGRect frame = [self.closeButton frame];
+    frame.origin.x = 10;
+    frame.origin.y = 0;
+    frame.size.width = 50;
+    frame.size.height = 40;
+    [self.closeButton setFrame:frame];
+    self.closeButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
+                                          UIViewAutoresizingFlexibleHeight;
+    [self.closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    [self.closeButton addTarget:self action:@selector(onCloseBtn_clicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.footer addSubview:self.closeButton];
+  
+    // Create the legal notices button
+    self.licenseButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.licenseButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
+                                          UIViewAutoresizingFlexibleLeftMargin |
+                                          UIViewAutoresizingFlexibleHeight;
+    [self.licenseButton setTitle:@"Legal Notices" forState:UIControlStateNormal];
+    [self.licenseButton addTarget:self action:@selector(onLicenseBtn_clicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.footer addSubview:self.licenseButton];
   }
   
   // remove the map view from the parent
@@ -343,7 +478,7 @@
   
   int footerHeight = 40;
   int footerAdjustment = 0;
-  if ([PluginUtil isIOS7] == false) {
+  if ([PluginUtil isIOS7_OR_OVER] == false) {
     footerAdjustment = 20;
   }
 
@@ -395,29 +530,126 @@
  */
 -(void)getMyLocation:(CDVInvokedUrlCommand *)command
 {
+NSLog(@"---getMyLocaiton");
+  // Obtain the authorizationStatus
+  CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
   
-  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-  locationManager.distanceFilter = kCLDistanceFilterNone;
-  
+NSLog(@"---status=%d", status);
+  if (status == kCLAuthorizationStatusDenied ||
+      status == kCLAuthorizationStatusRestricted) {
+NSLog(@"---status=denied");
+    //----------------------------------------------------
+    // kCLAuthorizationStatusDenied
+    // kCLAuthorizationStatusRestricted
+    //----------------------------------------------------
+      UIAlertView *alertView = [[UIAlertView alloc]
+                                initWithTitle:@"Location Services disabled"
+                                message:@"This app needs access to your location. Please turn on Location Services in your device settings."
+                                delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      [alertView show];
+      
+      NSString *error_code = @"service_denied";
+      NSString *error_message = @"This app has rejected to use Location Services.";
+      
+      NSMutableDictionary *json = [NSMutableDictionary dictionary];
+      [json setObject:[NSNumber numberWithBool:NO] forKey:@"status"];
+      [json setObject:[NSString stringWithString:error_message] forKey:@"error_message"];
+      [json setObject:[NSString stringWithString:error_code] forKey:@"error_code"];
+      
+      CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:json];
+      [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  } else {
+NSLog(@"---status=authorized");
+
+    if (self.locationManager == nil) {
+      self.locationManager = [[CLLocationManager alloc] init];
+      self.locationManager.delegate = self;
+    }
+    
+    
+    //----------------------------------------------------
+    // kCLAuthorizationStatusNotDetermined
+    // kCLAuthorizationStatusAuthorized
+    // kCLAuthorizationStatusAuthorizedAlways
+    // kCLAuthorizationStatusAuthorizedWhenInUse
+    //----------------------------------------------------
+    CLLocationAccuracy locationAccuracy = kCLLocationAccuracyNearestTenMeters;
+    NSDictionary *opts = [command.arguments objectAtIndex:0];
+    BOOL isEnabledHighAccuracy = NO;
+    if ([opts objectForKey:@"enableHighAccuracy"]) {
+      isEnabledHighAccuracy = [[opts objectForKey:@"enableHighAccuracy"] boolValue];
+    }
+    
+    if (isEnabledHighAccuracy == YES) {
+      locationAccuracy = kCLLocationAccuracyBestForNavigation;
+      self.locationManager.distanceFilter = 5;
+    } else {
+      self.locationManager.distanceFilter = 10;
+    }
+    self.locationManager.desiredAccuracy = locationAccuracy;
+
+    //http://stackoverflow.com/questions/24268070/ignore-ios8-code-in-xcode-5-compilation
+    #ifdef __IPHONE_8_0
+      if ([PluginUtil isIOS8_OR_OVER]) {
+        // iOS8
+        [self.locationManager requestWhenInUseAuthorization];
+      }
+    #endif
+    [self.locationManager stopUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
+    [self.locationCommandQueue addObject:command];
+    
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
   NSMutableDictionary *latLng = [NSMutableDictionary dictionary];
-  [latLng setObject:[NSNumber numberWithFloat:locationManager.location.coordinate.latitude] forKey:@"lat"];
-  [latLng setObject:[NSNumber numberWithFloat:locationManager.location.coordinate.longitude] forKey:@"lng"];
+  [latLng setObject:[NSNumber numberWithFloat:self.locationManager.location.coordinate.latitude] forKey:@"lat"];
+  [latLng setObject:[NSNumber numberWithFloat:self.locationManager.location.coordinate.longitude] forKey:@"lng"];
 
   NSMutableDictionary *json = [NSMutableDictionary dictionary];
+  [json setObject:[NSNumber numberWithBool:YES] forKey:@"status"];
+  
   [json setObject:latLng forKey:@"latLng"];
-  [json setObject:[NSNumber numberWithFloat:[locationManager.location speed]] forKey:@"speed"];
-  [json setObject:[NSNumber numberWithFloat:[locationManager.location altitude]] forKey:@"altitude"];
+  [json setObject:[NSNumber numberWithFloat:[self.locationManager.location speed]] forKey:@"speed"];
+  [json setObject:[NSNumber numberWithFloat:[self.locationManager.location altitude]] forKey:@"altitude"];
   
   //todo: calcurate the correct accuracy based on horizontalAccuracy and verticalAccuracy
-  [json setObject:[NSNumber numberWithFloat:[locationManager.location horizontalAccuracy]] forKey:@"accuracy"];
-  [json setObject:[NSNumber numberWithDouble:[locationManager.location.timestamp timeIntervalSince1970]] forKey:@"time"];
-  [json setObject:[NSNumber numberWithInteger:[locationManager.location hash]] forKey:@"hashCode"];
+  [json setObject:[NSNumber numberWithFloat:[self.locationManager.location horizontalAccuracy]] forKey:@"accuracy"];
+  [json setObject:[NSNumber numberWithDouble:[self.locationManager.location.timestamp timeIntervalSince1970]] forKey:@"time"];
+  [json setObject:[NSNumber numberWithInteger:[self.locationManager.location hash]] forKey:@"hashCode"];
 
-  locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-  [locationManager startUpdatingLocation];
-    
-  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:json];
-  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  for (CDVInvokedUrlCommand *command in self.locationCommandQueue) {
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:json];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  }
+  
+  [self.locationCommandQueue removeAllObjects];
+  [self.locationManager stopUpdatingLocation];
+  //self.locationManager.delegate = nil;
+  //self.locationManager = nil;
+}
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+  NSMutableDictionary *json = [NSMutableDictionary dictionary];
+  [json setObject:[NSNumber numberWithBool:NO] forKey:@"status"];
+  NSString *error_code = @"error";
+  NSString *error_message = @"Cannot get your location.";
+  if (error.code == kCLErrorDenied) {
+    error_code = @"service_denied";
+    error_message = @"This app has rejected to use Location Services.";
+  }
+  
+  [json setObject:[NSString stringWithString:error_message] forKey:@"error_message"];
+  [json setObject:[NSString stringWithString:error_code] forKey:@"error_code"];
+  
+  for (CDVInvokedUrlCommand *command in self.locationCommandQueue) {
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:json];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  }
+  
 }
 
 /**
@@ -425,6 +657,91 @@
  */
 -(void)isAvailable:(CDVInvokedUrlCommand *)command
 {
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+/**
+ * Clear all markups
+ */
+- (void)clear:(CDVInvokedUrlCommand *)command {
+  [self.mapCtrl.overlayManager removeAllObjects];
+  [self.mapCtrl.map clear];
+  
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)pluginLayer_pushHtmlElement:(CDVInvokedUrlCommand *)command {
+  NSString *domId = [command.arguments objectAtIndex:0];
+  NSDictionary *size = [command.arguments objectAtIndex:1];
+  [self.pluginLayer putHTMLElement:domId size:size];
+  [self.pluginScrollView.debugView putHTMLElement:domId size:size];
+}
+
+- (void)pluginLayer_removeHtmlElement:(CDVInvokedUrlCommand *)command {
+  NSString *domId = [command.arguments objectAtIndex:0];
+  [self.pluginLayer removeHTMLElement:domId];
+  [self.pluginScrollView.debugView removeHTMLElement:domId];
+    
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+
+-(void)pluginLayer_setDebuggable:(CDVInvokedUrlCommand *)command
+{
+  Boolean isDebuggable = [[command.arguments objectAtIndex:0] boolValue];
+  self.pluginLayer.debuggable = isDebuggable;
+  self.pluginScrollView.debugView.debuggable = isDebuggable;
+  [self.pluginScrollView.debugView setNeedsDisplay];
+    
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+
+-(void)pluginLayer_setClickable:(CDVInvokedUrlCommand *)command
+{
+  Boolean isClickable = [[command.arguments objectAtIndex:0] boolValue];
+  self.pluginLayer.clickable = isClickable;
+  self.pluginScrollView.debugView.clickable = isClickable;
+  [self.pluginScrollView.debugView setNeedsDisplay];
+    
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+/**
+ * Set background color
+ * @params key
+ */
+-(void)pluginLayer_setBackGroundColor:(CDVInvokedUrlCommand *)command
+{
+  NSArray *rgbColor = [command.arguments objectAtIndex:0];
+  self.pluginLayer.backgroundColor = [rgbColor parsePluginColor];
+
+  CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+/**
+ * Remove the map
+ */
+- (void)remove:(CDVInvokedUrlCommand *)command {
+  [self.mapCtrl.overlayManager removeAllObjects];
+  [self.mapCtrl.map clear];
+  [self.mapCtrl.map removeFromSuperview];
+  [self.mapCtrl.view removeFromSuperview];
+  self.mapCtrl.map = nil;
+  self.mapCtrl = nil;
+  self.licenseLayer = nil;
+  self.footer = nil;
+  self.closeButton = nil;
+  self.locationManager = nil;
+  self.locationCommandQueue = nil;
+  
+  
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }

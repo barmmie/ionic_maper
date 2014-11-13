@@ -43,9 +43,11 @@
   polyline.strokeWidth = [[json valueForKey:@"width"] floatValue];
   polyline.zIndex = [[json valueForKey:@"zIndex"] floatValue];
 
+  polyline.tappable = YES;
+  
   NSString *id = [NSString stringWithFormat:@"polyline_%lu", (unsigned long)polyline.hash];
   [self.mapCtrl.overlayManager setObject:polyline forKey: id];
-
+  polyline.title = id;
 
   NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
   [result setObject:id forKey:@"id"];
@@ -121,7 +123,7 @@
   NSString *polylineKey = [command.arguments objectAtIndex:1];
   GMSPolyline *polyline = [self.mapCtrl getPolylineByKey: polylineKey];
   NSInteger zIndex = [[command.arguments objectAtIndex:2] integerValue];
-  [polyline setZIndex:zIndex];
+  [polyline setZIndex:(int)zIndex];
 
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

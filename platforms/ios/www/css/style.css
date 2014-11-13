@@ -1,1 +1,84 @@
 /* Empty. Add your own CSS if you like */
+
+ion-side-menu.menu.menu-left {
+    z-index: -10;
+}
+
+#map_canvas {
+    position: fixed;
+    width: auto;
+    height: auto;
+}
+#introduction {
+    position: fixed;
+    background-color: #966D73;
+    padding :10px;
+    color: white;
+    line-height: 1.5em;
+    background-size: 25%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+@media only screen and (orientation:portrait) {
+    /* For portrait layouts only */
+    #map_canvas {
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 33%;
+    }
+
+    #introduction {
+        top: 68%;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+    }
+}
+@media only screen and (orientation:landscape) {
+    /* For landscape layouts only */
+    #map_canvas {
+        top: 50px;
+        left: 50%;
+        right: 0;
+        bottom: 5%;
+    }
+
+    #introduction {
+        top: 70px;
+        right: 50%;
+        left: 0;
+        bottom: auto;
+    }
+}
+.title {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+#demoBtn {
+    position: absolute !important;
+    left: 20% !important;
+    width: 60% !important;
+    bottom: 5% !important;
+}
+#infoWnd_frame {
+    position: absolute;
+    width: 200px;
+    height: 144px;
+    background-image: url("images/myinfo.png");
+    background-size: contain;
+}
+#infoWnd_body {
+    position: absolute;
+    width: 144px;
+    height: 66px;
+    left: 24px;
+    top: 28px;
+}
+
+#searchBox {
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 5%;
+}
